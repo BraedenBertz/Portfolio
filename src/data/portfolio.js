@@ -12,7 +12,7 @@ export default [
         link: 'sff'
     },
     {
-        title: "Chaotic Fractals",
+        title: "Fractals",
         imgURL: "/assets/chaos.jpg",
         stack: ['Java', 'JavaFX'],
         link: 'sdf'
@@ -21,6 +21,6 @@ export default [
         title: "Trading Platform",
         imgURL: "/assets/trading.jpg",
         stack: ['Java', 'JavaFX', 'MYSQL', 'SQL', 'DynammoDB', 'SQS'],
-        link: 'sdf'
+        link: 'sf'
     },
 ]

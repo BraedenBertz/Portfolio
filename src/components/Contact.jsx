@@ -1,13 +1,9 @@
 import React from 'react';
 import Title from './Title';
 import {useRef} from 'react'
-import {useState} from 'react'
-
-
 
 
 function Contact() {
-    const emailRegex = /^\S+@\S+\.\S+$/;
     const emailRef = useRef(null);
 
     function isValidEmail(e) {
@@ -16,15 +12,19 @@ function Contact() {
     }
 
     return (
+        <>
+        <div className='margin-auto mt-20'>
+            <Title >&lt;contact&gt;</Title>
+        </div>
         <div className='flex flex-col mb-10 mx-auto'>
-            <div className='flex justify-center items-center'>
+            <div className='flex justify-left items-center mx-20'>
                 <form 
                     action="https://getform.io/f/19ecc392-ab8a-40a1-bd7e-70720d237ab5"
                     method='POST'
                     className='flex flex-col w-full md:w-7/12'
                     onSubmit={isValidEmail}
                 >
-                <Title>Contact</Title>
+                {/* <Title>&lt;contact&gt;</Title> */}
                 <input
                     type="text"
                     name="name"
@@ -52,14 +52,17 @@ function Contact() {
                     >
                     </textarea>
                     <button type='submit' className='text-center inline-block px-8 py-3 w-max text-base 
-                    font-medium rounded-md text-white bg-gradient-to-r from-red-500 to-pink-500 drop-shadow-md
-                    hover:stroke-sky-700'>
+                    font-medium rounded-md text-white bg-gradient-to-r from-[#B200AC] to-pink-500 drop-shadow-md
+                    hover:opacity-75 transform'>
                         Send Message
                     </button>
                 </form>
             </div>
         </div>
-    );
+        <div className='margin-auto mt-4'>
+            <Title >&lt;/contact&gt;</Title>
+        </div>
+    </>);
 }
 
 export default Contact;

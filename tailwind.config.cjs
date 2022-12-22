@@ -3,6 +3,7 @@ module.exports = {
 	darkMode: 'class',
 	theme: {
 		extend: {
+			display: ["group-hover"],
 			fontFamily: {
 				inter: ['inter', 'serif'],
 			},
