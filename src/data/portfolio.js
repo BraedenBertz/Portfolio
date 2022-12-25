@@ -3,24 +3,24 @@ export default [
         title: "This website",
         imgURL: "/assets/portfolio.avif",
         stack: ['React', 'Tailwind', 'Vite'],
-        link: 'sfdf'
+        link: '/projects/PortfolioWebsite'
     },
     {
         title: "Dimensional Analysis of Time Series",
         imgURL: '/assets/timeseries.png',
         stack: ['Python3'],
-        link: 'sff'
+        link: '/projects/TimeSeriesAnalysis'
     },
     {
         title: "Fractals",
         imgURL: "/assets/chaos.jpg",
         stack: ['Java', 'JavaFX'],
-        link: 'sdf'
+        link: '/projects/Fractals'
     },
     {
         title: "Trading Platform",
         imgURL: "/assets/trading.jpg",
         stack: ['Java', 'JavaFX', 'MYSQL', 'SQL', 'DynammoDB', 'SQS'],
-        link: 'sf'
+        link: '/projects/TradingPlatform'
     },
 ]
