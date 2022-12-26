@@ -12,10 +12,8 @@ import {
   Carousel,
   CarouselItem,
   CarouselControl,
-  CarouselIndicators, 
-  CarouselCaption,
+  CarouselIndicators,
 } from 'reactstrap';
-import { Link } from 'react-router-dom';
 
 const items = [
   {
@@ -40,11 +38,11 @@ function ControlledCarousel(args) {
   const [animating, setAnimating] = useState(false);
   const [numPages, setNumPages] = useState(null);
   const [pageNumber, setPageNumber] = useState(1);
-  
+
   function onDocumentLoadSuccess({ numPages }) {
     setNumPages(numPages);
-  } 
-  
+  }
+
   const next = () => {
     if (animating) return;
     const nextIndex = activeIndex === items.length - 1 ? 0 : activeIndex + 1;
@@ -70,9 +68,9 @@ function ControlledCarousel(args) {
         key={item.src}
       >
         <a href={item.src} without rel="noopener noreferrer" target="_blank">
-        <Document file={item.src} onLoadSuccess={onDocumentLoadSuccess} className='flex flex-row justify-center'>
-          <Page pageNumber={pageNumber} />
-        </Document>
+          <Document file={item.src} onLoadSuccess={onDocumentLoadSuccess} className='flex flex-row justify-center'>
+            <Page pageNumber={pageNumber} />
+          </Document>
         </a>
       </CarouselItem>
     );
@@ -81,36 +79,36 @@ function ControlledCarousel(args) {
   return (
     <>
       <div className='margin-auto mt-20'>
-         <Title >&lt;papers&gt;</Title>
+        <Title >&lt;papers&gt;</Title>
       </div>
-    <Carousel
-      activeIndex={activeIndex}
-      next={next}
-      previous={previous}
-      {...args}
-    >
-      <CarouselIndicators
-        items={items}
+      <Carousel
         activeIndex={activeIndex}
-        onClickHandler={goToIndex}
-      />
-      {slides}
-      <CarouselControl
-        direction="prev"
-        directionText="Prev"
-        onClickHandler={previous}
+        next={next}
+        previous={previous}
+        {...args}
       >
-      </CarouselControl>
-      <CarouselControl
-        direction="next"
-        directionText="Next"
-        onClickHandler={next}
-      />
-    </Carousel>
-    <div className='margin-auto mt-4'>
-    <Title >&lt;/papers&gt;</Title>
- </div>
- </>
+        <CarouselIndicators
+          items={items}
+          activeIndex={activeIndex}
+          onClickHandler={goToIndex}
+        />
+        {slides}
+        <CarouselControl
+          direction="prev"
+          directionText="Prev"
+          onClickHandler={previous}
+        >
+        </CarouselControl>
+        <CarouselControl
+          direction="next"
+          directionText="Next"
+          onClickHandler={next}
+        />
+      </Carousel>
+      <div className='margin-auto mt-4'>
+        <Title >&lt;/papers&gt;</Title>
+      </div>
+    </>
   );
 }
 
